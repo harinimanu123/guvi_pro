@@ -1,0 +1,58 @@
+.b-card {
+  width: 100%;
+  padding: 0px;
+  margin-right: 20px;
+  margin-top: 3px;
+  border: 0px solid;
+  max-height: 120px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 20px #000;
+  -webkit-box-shadow-box-shadow: 0px 0px 20px #000;
+  background-color: #fff;
+  color: #000;
+}
+
+.c-card {
+  background-color: #000 !important;
+  color: #fff;
+}
+
+.d-card {
+  background-color: #007bff !important;
+}
+
+.btn {
+  min-width: 20%;
+}
+
+.pwd {
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  letter-spacing: 2px;
+}
+
+.chpwd {
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100px;
+  background-color: #007bff !important;
+  display: none;
+}
+
+.alert {
+  color: red;
+}
+
+.close {
+  color: #fff;
+}
+
+.mod {
+  background-color: #000 !important;
+  border-radius: 20px;
+  color: #fff;
+  padding: 20px;
+}
+/*# sourceMappingURL=profile.css.map */

@@ -1,0 +1,13 @@
+input[type='submit'] {
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 40%;
+  background-color: #007bff !important;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 15px;
+}
+/*# sourceMappingURL=edit.css.map */
