@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sign-up.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/profile.css')}}">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Profile</title>
+  </head>
+  <body>
+
+    <div class="container-fluid bg-dark">
+      <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+        <div class="col-lg-10 col-md-10 col-sm-12">
+          <div class="card b-card c-card">
+            <div class="card-body">
+              <h3>Profile</h3>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <center><a href="{{url_for('edit')}}"><button class="btn btn-primary pwd">Update</button></a></center>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <center><a href="{{url_for('logout')}}"><button class="btn btn-primary pwd">Sign-out</button></a></center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+      </div>
+
+
+
+
+{% for i in range(1, l-1) %}
+      <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+        <div class="col-lg-10 col-md-10 col-sm-12">
+          <div class="card b-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-5">
+                  <h6>{{col[i]}}</h6>
+                </div>
+                <div class="col-md-7">
+                  <h6>{{res[i]}}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+      </div>
+
+{% endfor %}
+      
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="card b-card d-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <center>
+                    
+                      <button class="btn btn-primary pwd" data-toggle="modal" data-target="#exampleModalCenter">Change Password</button>
+                    
+                  </center>
+                  {% if (flag == 1) %}
+                  <center><span class="alert">{{alert}}</span></center>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+      </div>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content mod">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalCenterTitle">Change Password</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form role = "form" method = "POST">
+          <input type="password" name="old_password" id="old_password" placeholder="Old Password" required autofocus>
+          <input type="password" name="new_password" id="new_password" placeholder="New Password" required>
+          <span id="mm"></span>
+          <span id="mn"></span>
+          <input type="password" name="confirm_new_password" id="confirm_new_password" placeholder="Confirm New Password" required>
+          <span id="message"></span>
+          <center>
+            <input id="chsub" type="submit" name = "submit" class="btn btn-primary chpwd" value="SUBMIT">
+          </center>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Finish</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <script type="text/javascript">
+      
+$('#new_password').on('keyup', function () {
+    var pwd = $('#new_password').val()
+    if (pwd.length > 8 && pwd.match(/[a-z]/) && pwd.match(/[A-Z]/) && pwd.match(/\d/) && pwd.match(/[~!@#$%^&*()]/)) {
+      $('#mm').html('Password Strength : Strong').css('color', 'green').show();
+    }
+    else if (pwd.length > 8 && pwd.match(/[a-z]/) && pwd.match(/[A-Z]/) && pwd.match(/\d/)) {
+      $('#mm').html('Password Strength : Good').css('color', 'green').show();
+    }
+    else if (pwd.length > 8 && pwd.match(/[a-z]/) && pwd.match(/[A-Z]/)) {
+      $('#mm').html('Password Strength : Weak').css('color', 'red').show();
+      $('#mn').html('Requires numbers and special character').css('color', 'red').show();
+    }
+    else {
+      $('#mm').html('Requires atleast 8 characters, capital letters, numbers and special character').css('color', 'red').show();  
+    }
+});
+
+
+$('#confirm_new_password').on('keyup', function () {
+      if ($('#new_password').val() == $('#confirm_new_password').val()) {
+        $('#message').html('MATCHING').css('color', 'green').show();
+        $('#chsub').show();
+      } 
+      else {
+        $('#message').html('NOT MATCHING').css('color', 'red');
+        $('#chsub').hide();
+      }
+});
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="{{url_for('static', filename='js/calendar.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/form_valid.js')}}"></script>
+
+  </body>
+</html>
+
+
+
+

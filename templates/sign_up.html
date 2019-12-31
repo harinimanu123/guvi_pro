@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <title>SignUp</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sign-up.css')}}">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="static/js/form_submit.js"></script> 
+</head>
+ 
+<body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-1 col-sm-12"></div>
+        <div class="col-lg-6 col-md-10 col-sm-12">
+          <div class="card a-card">
+            <div class="card-body ">
+              <h3><center>SignUp</center></h3>
+              <form role="form">
+                </div>
+        <div class="card-body bg-dark">
+    <form>
+    <div class="form=group">
+        <input type="text" id="fname" name="firstname" placeholder="First name" required autofocus><img src="{{svg[0]}}">
+
+    </div>
+    <div class="form=group">
+        <input type="text" id="lname" name="lastname" placeholder="Last name" required><img src="{{svg[0]}}">
+        
+            </div>
+    <div class="form=group">
+        <input id="mail" type="email" name="mail" placeholder="E-mail" required=""><img src="{{svg[4]}}">
+
+    </div>
+    <div class="form=group">
+        <input id="mob1" type="text" name="mobile1" placeholder="Mobile 1" minlength="10" maxlength="13" required=""><img src="{{svg[1]}}">
+        <input id="mob2" type="text" name="mobile2" placeholder="Mobile 2" minlength="10" maxlength="10" required=""><img src="{{svg[1]}}">
+            </div>
+            <div class="form=group">
+                <input type="text" name = 'dob' id="date" placeholder="MM - DD - YYYY" maxlength="10"><img src="{{svg[2]}}">
+                    </div>
+                    <div class="form=group">
+                        <input id="city" type="text" name="city" placeholder="City" required=""><img src="{{svg[5]}}">
+                            </div>
+
+                    <div class="form=group">
+                        
+                        <input id="password" type="password" name="password" placeholder="Password" required=""><img src="{{svg[3]}}">
+                        <span id="mm"></span><br>
+                        <span id="mn"></span>
+                        <input id="confirm_password" type="password" name="confirm_password" placeholder="Confirm Password" required=""><img src="{{svg[3]}}">
+                        <span id="message"></span>
+                        <br><br>
+                    </div>
+                                    <div class="form=group">
+                                         <center>  
+                  <button id = 'sub' class="btn btn-lg btn-primary" onclick="window.location='templates/login.html" type="button">REGISTER</button>
+                </center>
+                                       
+                                            </div>
+              </form>
+              <br>
+              <h6>Already have an account? &nbsp; &nbsp;<a href="{{url_for('login')}}">LOGIN</a> </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-1 col-sm-12"></div>
+      </div>   
+    </div> 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+    <script type="text/javascript" src="{{url_for('static', filename='js/calendar.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/form_valid.js')}}"></script>
+
+ 
+</body>
+ 
+</html>

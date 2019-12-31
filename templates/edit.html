@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sign-up.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/edit.css')}}">
+
+
+
+    <title>Update Profile</title>
+  </head>
+  <body>
+
+    <div class="container-fluid bg-dark">
+      <div class="row">
+        <div class="col-lg-3 col-md-1 col-sm-12"></div>
+        <div class="col-lg-6 col-md-10 col-sm-12">
+          <div class="card a-card">
+            <div class="card-body">
+              <h3>Update Profile</h3>
+              <form method="POST" autocomplete="off">
+
+                <input id="fname" type="text" name="firstname" placeholder="First name" value="{{res[1]}}" required=""><img src="{{svg[0]}}">
+                <input id="lname" type="text" name="lastname" placeholder="Last name" value="{{res[2]}}" required=""><img src="{{svg[0]}}">
+                <input id="mail" type="email" name="mail" placeholder="E-mail" value="{{res[3]}}" required=""><img src="{{svg[4]}}">
+                <input type="text" name = 'dob' id="date" placeholder="MM - DD - YYYY" value="{{res[4]}}" required=""><img src="{{svg[2]}}">
+                <input id="mob1" type="text" name="mobile1" placeholder="Mobile 1" value="{{res[5]}}" required=""><img src="{{svg[1]}}">
+                <input id="mob2" type="text" name="mobile2" placeholder="Mobile 2" value="{{res[6]}}" required=""><img src="{{svg[1]}}">
+                <input id="city" type="text" name="city" placeholder="City" value="{{res[7]}}" required=""><img src="{{svg[5]}}">
+                <br><br>
+                <center><input id="su" type="submit" name = "submit" class="btn btn-primary" value="EDIT PROFILE"></center>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-1 col-sm-12"></div>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="{{url_for('static', filename='js/calendar.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/form_valid.js')}}"></script>
+
+  </body>
+</html>
